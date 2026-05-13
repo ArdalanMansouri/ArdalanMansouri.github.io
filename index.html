@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Ardalan Mansouri — Computational Biologist &amp; Data Scientist</title>
+  <meta name="description" content="Ardalan Mansouri is a computational biologist and data scientist building open-source Python tools for biomedical data analysis — including flow cytometry, cytotoxicity assays, cell growth, and high-throughput compound screening." />
+  <meta name="keywords" content="Ardalan Mansouri, computational biology, bioinformatics, Python, flow cytometry, cytotoxicity, high-throughput screening, single-cell, data science, biotech, pharmacology" />
+  <meta name="author" content="Ardalan Mansouri" />
+  <link rel="canonical" href="https://ardalanmansouri.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ardalanmansouri.github.io/" />
+  <meta property="og:title" content="Ardalan Mansouri — Computational Biologist &amp; Data Scientist" />
+  <meta property="og:description" content="Open-source Python tools for biomedical data analysis: flow cytometry, cytotoxicity assays, cell growth analysis, and high-throughput compound screening." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/112559807?v=4" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ardalan Mansouri — Computational Biologist &amp; Data Scientist" />
+  <meta name="twitter:description" content="Open-source Python tools for biomedical data analysis." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/112559807?v=4" />
+
+  <!-- Structured Data (JSON-LD) for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ardalan Mansouri",
+    "url": "https://ardalanmansouri.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/112559807?v=4",
+    "jobTitle": "Computational Biologist & Data Scientist",
+    "description": "Computational biologist and data scientist with expertise in software solutions for medical, pharmacological, and biotech settings.",
+    "sameAs": [
+      "https://github.com/ArdalanMansouri",
+      "https://www.linkedin.com/in/ardalan-mansouri/"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --accent:    #238636;
+      --accent-h:  #2ea043;
+      --link:      #58a6ff;
+      --link-h:    #79c0ff;
+      --text:      #c9d1d9;
+      --text-dim:  #8b949e;
+      --tag-bg:    #1f2937;
+      --tag-fg:    #58a6ff;
+      --radius:    10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-h); text-decoration: underline; }
+
+    /* ── Layout helpers ───────────────────────────────────────────── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 64px 0; }
+
+    /* ── Navigation ───────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Hero ─────────────────────────────────────────────────────── */
+    #hero {
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+
+    #hero img.avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    #hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #e6edf3;
+    }
+
+    #hero .tagline {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    #hero .location {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+    }
+
+    .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s;
+      text-decoration: none !important;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-h); color: #fff; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: var(--surface); color: var(--text); }
+
+    /* ── Section headings ─────────────────────────────────────────── */
+    .section-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #e6edf3;
+      padding-bottom: 12px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── About ────────────────────────────────────────────────────── */
+    #about p {
+      font-size: 1rem;
+      color: var(--text);
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Repo cards ───────────────────────────────────────────────── */
+    #projects .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 20px;
+    }
+
+    .repo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .repo-card:hover {
+      border-color: var(--link);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.08);
+    }
+
+    .repo-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .repo-card h3 a {
+      color: var(--link);
+    }
+
+    .repo-card h3 a:hover { text-decoration: underline; }
+
+    .repo-card .desc {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      flex: 1;
+    }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-fg);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(88, 166, 255, 0.25);
+    }
+
+    .tag.python { color: #79c0ff; border-color: rgba(121, 192, 255, 0.25); }
+    .tag.bio    { color: #56d364; border-color: rgba(86, 211, 100, 0.25); background: #1a2d1e; }
+
+    .repo-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f1e05a; /* Python yellow */
+      display: inline-block;
+    }
+
+    .repo-card .view-link {
+      align-self: flex-start;
+      font-size: 0.85rem;
+      color: var(--link);
+    }
+    .repo-card .view-link:hover { color: var(--link-h); }
+
+    /* ── GitHub profile highlight ─────────────────────────────────── */
+    #github-profile .profile-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    #github-profile .profile-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+    }
+
+    #github-profile .profile-text h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #e6edf3;
+    }
+
+    #github-profile .profile-text p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    #github-profile .profile-actions {
+      margin-left: auto;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--text-dim); }
+    footer a:hover { color: var(--text); }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      #hero h1 { font-size: 1.8rem; }
+      #projects .grid { grid-template-columns: 1fr; }
+      #github-profile .profile-actions { margin-left: 0; width: 100%; }
+      nav ul { gap: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────── -->
+  <nav aria-label="Main navigation">
+    <div class="inner">
+      <span class="brand">Ardalan Mansouri</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#github-profile">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────── -->
+  <header id="hero">
+    <div class="container">
+      <img
+        class="avatar"
+        src="https://avatars.githubusercontent.com/u/112559807?v=4"
+        alt="Ardalan Mansouri profile photo"
+        width="120"
+        height="120"
+      />
+      <h1>Ardalan Mansouri</h1>
+      <p class="tagline">Computational Biologist &amp; Data Scientist</p>
+      <p class="location">&#127758; Netherlands</p>
+      <div class="btn-group">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/ArdalanMansouri"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Ardalan Mansouri's GitHub profile"
+        >
+          <!-- GitHub icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/>
+          </svg>
+          View GitHub Profile
+        </a>
+        <a
+          class="btn btn-secondary"
+          href="https://www.linkedin.com/in/ardalan-mansouri/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Ardalan Mansouri's LinkedIn profile"
+        >
+          <!-- LinkedIn icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V9H3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.23 0z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── About ─────────────────────────────────────────────────── -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-heading">About</h2>
+        <p>
+          I am a computational biologist and data scientist specialising in software solutions for
+          <strong>medical, pharmacological, and biotech</strong> research settings. My work focuses on building
+          transparent, reproducible, and open-source Python tools that bridge the gap between raw instrument
+          output and actionable biological insights.
+        </p>
+        <p>
+          My projects span high-content imaging analysis, flow cytometry visualisation, cytotoxicity assay
+          pipelines, and single-cell data workflows — all designed to replace ad-hoc spreadsheet analyses with
+          well-documented, notebook-friendly packages. Research funded in part by the European Union's
+          Horizon 2020 programme (proEVLifeCycle, grant No 860303).
+        </p>
+      </div>
+    </section>
+
+    <!-- ── GitHub Profile ─────────────────────────────────────────── -->
+    <section id="github-profile">
+      <div class="container">
+        <h2 class="section-heading">GitHub</h2>
+        <div class="profile-box">
+          <img
+            src="https://avatars.githubusercontent.com/u/112559807?v=4"
+            alt="GitHub avatar for ArdalanMansouri"
+            width="80"
+            height="80"
+          />
+          <div class="profile-text">
+            <h2>ArdalanMansouri</h2>
+            <p>5 public repositories &nbsp;·&nbsp; Python &nbsp;·&nbsp; MIT-licensed open-source tools</p>
+          </div>
+          <div class="profile-actions">
+            <a
+              class="btn btn-primary"
+              href="https://github.com/ArdalanMansouri"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open GitHub Profile ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ───────────────────────────────────────────────── -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-heading">Open-Source Projects</h2>
+        <div class="grid">
+
+          <!-- 1 – flowcytometry-graph-gen -->
+          <article class="repo-card">
+            <h3>
+              <a
+                href="https://github.com/ArdalanMansouri/flowcytometry-graph-gen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >flowcytometry-graph-gen</a>
+            </h3>
+            <p class="desc">
+              An open-source Python alternative to black-box commercial tools (e.g., FlowJo) for processing
+              and visualising flow cytometry data. Built on <strong>Plotly</strong>, it provides full
+              transparency into every normalisation step and enables extensive customisation of
+              publication-quality interactive figures.
+            </p>
+            <div class="tag-row">
+              <span class="tag python">Python</span>
+              <span class="tag bio">Flow Cytometry</span>
+              <span class="tag">Plotly</span>
+              <span class="tag">Bioinformatics</span>
+            </div>
+            <div class="repo-meta">
+              <span><span class="dot"></span> Python</span>
+              <span>MIT License</span>
+            </div>
+            <a
+              class="view-link"
+              href="https://github.com/ArdalanMansouri/flowcytometry-graph-gen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View repository →</a>
+          </article>
+
+          <!-- 2 – cytotoxicity-analyzer -->
+          <article class="repo-card">
+            <h3>
+              <a
+                href="https://github.com/ArdalanMansouri/cytotoxicity-analyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >cytotoxicity-analyzer</a>
+            </h3>
+            <p class="desc">
+              <strong>cytotox</strong> — a complete, code-first pipeline for cytotoxicity assay analysis.
+              Classifies single cells into Viable, Apoptosis, Late Apoptosis, and Necrosis populations using
+              Caspase&nbsp;3/7 and PI fluorescence intensity thresholds, with interactive Plotly scatter
+              plots and HTML export. Live notebooks available at
+              <a href="https://ardalanmansouri.github.io/cytotoxicity-analyzer/" target="_blank" rel="noopener noreferrer">
+                ardalanmansouri.github.io/cytotoxicity-analyzer
+              </a>.
+            </p>
+            <div class="tag-row">
+              <span class="tag python">Python</span>
+              <span class="tag bio">Cytotoxicity</span>
+              <span class="tag">Plotly</span>
+              <span class="tag">Cell Biology</span>
+            </div>
+            <div class="repo-meta">
+              <span><span class="dot"></span> Python</span>
+              <span>MIT License</span>
+            </div>
+            <a
+              class="view-link"
+              href="https://github.com/ArdalanMansouri/cytotoxicity-analyzer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View repository →</a>
+          </article>
+
+          <!-- 3 – cell-growth-analyzer -->
+          <article class="repo-card">
+            <h3>
+              <a
+                href="https://github.com/ArdalanMansouri/cell-growth-analyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >cell-growth-analyzer</a>
+            </h3>
+            <p class="desc">
+              <strong>cellgrowth</strong> — a lightweight, Jupyter-friendly Python package for reproducible
+              analysis and interactive visualisation of cell growth data exported from high-content imaging
+              plate readers (e.g., PerkinElmer Operetta/Opera). Converts raw timepoint exports into
+              statistically annotated grouped tables and interactive Plotly line graphs with error-bar
+              toggles.
+            </p>
+            <div class="tag-row">
+              <span class="tag python">Python</span>
+              <span class="tag bio">Cell Growth</span>
+              <span class="tag">HCI</span>
+              <span class="tag">Plate Reader</span>
+            </div>
+            <div class="repo-meta">
+              <span><span class="dot"></span> Python</span>
+              <span>MIT License</span>
+            </div>
+            <a
+              class="view-link"
+              href="https://github.com/ArdalanMansouri/cell-growth-analyzer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View repository →</a>
+          </article>
+
+          <!-- 4 – high-throughput-compound-screening -->
+          <article class="repo-card">
+            <h3>
+              <a
+                href="https://github.com/ArdalanMansouri/high-throughput-compound-screening"
+                target="_blank"
+                rel="noopener noreferrer"
+              >high-throughput-compound-screening</a>
+            </h3>
+            <p class="desc">
+              End-to-end Python library for high-throughput compound screening (HTS) data analysis in drug
+              discovery. Ingests raw plate-reader output, applies plate-to-plate normalisation, performs
+              SD-based hit classification (inhibitors / inducers), and renders well-layout heatmaps.
+              Supports LOPAC and Prestwick compound libraries.
+            </p>
+            <div class="tag-row">
+              <span class="tag python">Python</span>
+              <span class="tag bio">Drug Discovery</span>
+              <span class="tag">HTS</span>
+              <span class="tag">Plate Analysis</span>
+            </div>
+            <div class="repo-meta">
+              <span><span class="dot"></span> Python</span>
+              <span>MIT License</span>
+            </div>
+            <a
+              class="view-link"
+              href="https://github.com/ArdalanMansouri/high-throughput-compound-screening"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View repository →</a>
+          </article>
+
+          <!-- 5 – single-cell-big-data -->
+          <article class="repo-card">
+            <h3>
+              <a
+                href="https://github.com/ArdalanMansouri/single-cell-big-data"
+                target="_blank"
+                rel="noopener noreferrer"
+              >single-cell-big-data</a>
+            </h3>
+            <p class="desc">
+              A Python package (<strong>scbig</strong>) for large-scale single-cell data analysis and
+              visualisation. Designed for interactive, notebook-driven workflows that scale to big-data
+              single-cell datasets, with static and interactive figure support.
+            </p>
+            <div class="tag-row">
+              <span class="tag python">Python</span>
+              <span class="tag bio">Single-Cell</span>
+              <span class="tag">Big Data</span>
+              <span class="tag">Genomics</span>
+            </div>
+            <div class="repo-meta">
+              <span><span class="dot"></span> Python</span>
+              <span>MIT License</span>
+            </div>
+            <a
+              class="view-link"
+              href="https://github.com/ArdalanMansouri/single-cell-big-data"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View repository →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2026 Ardalan Mansouri &nbsp;·&nbsp;
+        <a href="https://github.com/ArdalanMansouri" target="_blank" rel="noopener noreferrer">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/ardalan-mansouri/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
